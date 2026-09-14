@@ -2,14 +2,21 @@
 
 **DOUGLAS W. T., JACKS0N — owner / originating author**
 
-What if some harms we call “individual failure” are also failures of social infrastructure?
+What if a proposed solution were required to **survive being broken in public** before anyone treated it as a solution?
 
-Instead of turning that proposition into a slogan, this repository turns it into an open model that can be attacked, measured, falsified, repaired, and tested.
+This repository began with a social-infrastructure hypothesis and then repeatedly attacked its own assumptions with evidence, counterevidence, causal tests, governance tests, executable fixtures, combinatorial fuzzing, and mutation testing.
 
-The working framework is **REAL: Reconnect → Enable → Anchor → Learn.**
+The current result is **REAL.v1.0: a minimum-valid decision compiler**:
 
-Reconnect people to durable human bonds. Enable practical agency. Anchor progress in institutions that persist. Learn from measured outcomes, harms, failures, counterevidence, and costs.
+```text
+OBSERVE what is actually known
+→ enforce rights/safety/authority/evidence boundaries
+→ add only the decision modules that earn their complexity
+→ ACT | OFFER | DEFER | NO-ACTION
+→ measure what matters
+→ preserve a trace that can be challenged
+```
 
-The discussion is deliberately structured for disagreement. Pick one causal link. Break it. Improve it. Bring evidence. Bring counterevidence. Propose a cheaper or less-coercive intervention. Define what would prove the model wrong.
+The public challenge remains simple: **break it**. Bring evidence. Bring counterevidence. Find an unsafe branch, a hidden value judgment, an invented authority, an unsupported causal leap, or unnecessary complexity. If it breaks, the break becomes part of the record and the repair must survive the next test.
 
-**The goal is not consensus. The goal is a solution architecture that survives contact with evidence and real life.**
+**The goal is not consensus or a polished theory. The goal is a decision architecture that becomes smaller, safer, clearer, and harder to fool each time it meets reality.**
