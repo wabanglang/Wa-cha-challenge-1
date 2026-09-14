@@ -1,73 +1,60 @@
-# [PILOT] Test REAL v0.3 — diagnose bottleneck → minimum-sufficient module → additive-value challenge
+# [PILOT] Test REAL v0.4 — Observe → Hypothesize → Probe → Measure → Adapt
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
 ## Objective
 
-Design the smallest ethical field test capable of falsifying REAL.v0.3, including whether modules selected from a diagnosed bottleneck add durable value beyond the strongest simpler intervention.
+Design the smallest ethical field test capable of falsifying REAL.v0.4 without treating intake assessment as causal diagnosis.
 
 ```text
-D := diagnose active bottleneck
-B := minimum-sufficient base intervention
-X := candidate added module
-
-COMPARE B vs B+X
-
-ΔX := Outcome(B+X) − Outcome(B)
-      − Cost(X) − Burden(X) − Harm(X)
+O := OBSERVE direct/reported constraints, assets, preferences, risks
+H? := ranked candidate bottleneck hypotheses + alternatives + confidence + UNKNOWN
+P := smallest safe/reversible mechanism-matched probe
+Δ := preregistered target response + burden + harm + cost
+M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
+L := update hypothesis + decision rule
 ```
 
-Do not test the entire REAL stack against no service; that cannot identify marginal component value.
-
-## Candidate design
+## Distinctions the pilot must preserve
 
 ```text
-UNIT := bounded service catchment / eligible cohort
-DURATION := 90-day active phase + persistence follow-up
-COHORT := voluntary participants with explicit rules
-DIAGNOSIS := preregistered bottleneck classification
-BASE := strongest minimum intervention matched to bottleneck
-ADD-ON := one R, E, or A module
-OUTCOMES := target + cross-domain + burden + harm + cost + persistence
+NEED DETECTED ≠ CAUSAL BOTTLENECK PROVEN
+ASSESSMENT SCORE ≠ TREATMENT MATCH
+PROBE RESPONSE ≠ AUTOMATIC MECHANISM PROOF
 ```
 
-## Stage gates
+## Pre-registration before every probe
+
+- observable evidence;
+- candidate mechanism;
+- competing explanations;
+- confidence + UNKNOWN;
+- chosen minimal probe;
+- expected direction/magnitude;
+- measurement window;
+- KEEP/SWITCH/AUGMENT/STOP threshold;
+- harm threshold.
+
+## Counterfactual requirement
+
+Where feasible use randomized, staggered, crossover, SMART-like, N-of-1, or other defensible designs that separate probe effect from natural change.
 
 ```text
-G0 problem/population validation
-G1 diagnosis protocol frozen
-G2 evidence + ethics review
-G3 comparator + baseline defined
-G4 limited launch
-G5 early harm/burden/fidelity audit
-G6 target-outcome analysis
-G7 persistence follow-up
-G8 KEEP-X | REMOVE-X | REPAIR-DIAGNOSIS | STOP | REPLICATE
+Δprobe_causal := Outcome_with_probe − credible counterfactual
 ```
 
-## Decision rule
+Simple pre/post improvement is insufficient for mechanism confirmation.
+
+## Reliability test
+
+Independent evaluators receive the same observable record and separately record facts, hypotheses, confidence/UNKNOWN, and proposed probe. Measure agreement on observations separately from causal inference.
+
+## Hard failures
 
 ```text
-KEEP X IFF:
-  ΔX > predeclared meaningful threshold
-  & benefit persists
-  & no material subgroup harm/inequity
-  & added burden/cost acceptable.
-
-REMOVE X IFF:
-  B+X ≈ B
-  OR burden/cost erases benefit
-  OR cross-domain harm appears.
+post-hoc causal story required to rescue failed prediction → FAIL
+forced single bottleneck despite material uncertainty → FAIL
+assessor identity materially changes module allocation → RELIABILITY FAIL
 ```
 
-## Diagnostic requirement
-
-Independent evaluators applying the same bottleneck rules to the same case should reach materially similar classifications before intervention begins. If diagnosis is unstable, REAL.v0.3 fails upstream.
-
-```text
-ACTIVITY ≠ OUTCOME
-MORE-SERVICES ≠ BETTER-SERVICE
-INTEGRATED ≠ ADDITIVE
-```
-
-Evidence trail: Issue #3, Independent Evidence Pass #3.
+Evidence trail: Issue #3, Independent Evidence Pass #4.
