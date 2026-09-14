@@ -2,74 +2,83 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-## Core model — `REAL.v0.4`
+## `REAL.v1.0`
 
 ```text
-REAL.v0.4 := O → H? → P → Δ → M → L
-
-O := OBSERVE measurable/reported constraints, assets, preferences, risks
-H? := HYPOTHESIZE candidate bottleneck(s) + confidence + alternatives + UNKNOWN
-P := PROBE with smallest safe/reversible mechanism-matched intervention
-Δ := MEASURE preregistered response + burden + harm + cost + persistence signal
-M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
-L := LEARN/update hypothesis + decision rule
+REAL.v1.0 := COMPILE(Context)
+             → MIN-VALID-PATH
+             → ACT | OFFER | DEFER | NO-ACTION
+             → MEASURE
+             → TRACE/AUDIT
 ```
 
-Optional modules remain `R?{RECONNECT}`, `E?{ENABLE}`, `A?{ANCHOR}`.
-
-## Evidence repairs
+### Core
 
 ```text
-C6(original) E+R→agency/stability = BROKEN / OVERBROAD
-C7(original) durable local institution→persistent gains = BROKEN / OVERCLAIMED
-D0(original) intake assessment→active causal bottleneck = BROKEN / OVERCLAIMED
-
-D1 structured need detection = FEASIBLE / TOOL-DEPENDENT
-D2 causal dominance from intake = NOT ESTABLISHED
-D3 inferential inter-rater agreement = VARIABLE
-D4 structured rules improve consistency = CONTEXT-DEPENDENT
-D5 response-based adaptive testing = SUPPORTED METHODOLOGY
+O := OBSERVE decision-relevant state
+B := BOUNDARIES{rights,safety,authority,evidence-support}
+C := CHOOSE/OFFER/DEFER transparently
+T := TRACE{reasons,uncertainty,version,outcome}
 ```
 
-## Bottleneck hypothesis schema
+### Optional
 
 ```text
-{
- observable evidence,
- candidate mechanism,
- competing explanations,
- confidence,
- UNKNOWN,
- minimal probe,
- target outcome,
- response threshold,
- stop/harm rule,
- revision rule
-}
+H? hypotheses
+P? probe/experiment
+V+ expanded value vector
+G+ nontrivial governance routing
+K? mechanism
+A? persistence substrate
+ADAPT? sequential treatment logic
 ```
 
-## Invariants
+### System
 
 ```text
-OBSERVE-BEFORE-INFER
+L* := policy-aware learning
+      + selection/support audit
+      + fairness/drift monitoring
+      + external/prospective validation
+      + governed version promotion
+```
+
+## Evidence-repair summary
+
+```text
+fixed social-causal chain = NOT VALIDATED
+fixed R→E→A→L pipeline = BROKEN
+universal additivity = BROKEN
+mandatory local anchor = BROKEN
+one-shot causal diagnosis = BROKEN
+probe response as mechanism proof = BROKEN
+mandatory mechanism certainty = BROKEN
+universal scalar utility = BROKEN
+technical model as chooser = BROKEN
+naive self-learning = BROKEN
+maximal mandatory adaptive pipeline = OVER-SPECIFIED
+```
+
+## Compiler laws
+
+```text
 UNKNOWN-IS-VALID
-NO-SCORE-TO-CAUSALITY
-NO-SCORE-TO-ALLOCATION
-HYPOTHESIS-NOT-DIAGNOSIS
-PROBE-MINIMUM
-PREDECLARE-DECISION-RULE
-NO-POSTHOC-RESCUE
-NO-CHAIN-INFERENCE
-NO-STACK-PREMIUM
-MINIMUM-SUFFICIENT-FIRST
-MARGINAL-COMPONENT-TEST
-REMOVE-NONVALUE
-ANCHOR-NOT-IDOL
-NO-OUTCOME-SUBSTITUTION
+NO-INVENTED-CAUSALITY
+NO-HIDDEN-WEIGHTS
+AUTHORITY-BEFORE-OPTIMIZATION
+NO-AI-SOVEREIGNTY
+SELECTIVE-LABEL-WATCH
+NO-SELF-VALIDATION
+COMPLEXITY-MUST-EARN-KEEP
+COMPILE-AWAY-NONVALUE
+DIRECT-EVIDENCE-BYPASS
+UNCERTAINTY-ESCALATES-METHOD
+IRREVERSIBILITY-ESCALATES-SAFEGUARDS
+MINIMUM-VALID-PATH
 ```
 
-## Current falsification frontier
+## Current frontier
 
-`P := PROBE`: determine whether intervention response supports mechanism inference, or whether regression to the mean, spontaneous change, placebo/context effects, delayed effects, fidelity problems, and interactions make response a poor causal diagnostic.
+Machine-executable conformance: deterministic compilation, explicit UNKNOWN/blocked states, minimal optional modules, authority validity, trace completeness, and safe handling of selective/missing outcomes.
 
-The issue set remains the executable research surface: Discussion → Model → Evidence → Solution → Pilot → Metrics → Governance.
+The issue set remains the executable public surface: Discussion → Model → Evidence → Solution → Conformance/Pilot → Metrics → Governance.
