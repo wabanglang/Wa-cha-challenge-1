@@ -9,19 +9,22 @@ Deterministic, zero-dependency Node.js reference compiler for the public REAL/RW
 ```bash
 node test.mjs
 node fuzz.mjs
+node mutation.mjs
 ```
 
 ## Current result
 
 ```text
-15/15 regression fixtures PASS
+19/19 regression fixtures PASS
 640/640 combinatorial property cases PASS
+9/9 intentionally dangerous mutants KILLED
 0 current invariant violations
+0 mutation survivors
 ```
 
 ## Fuzz repair history
 
-`REAL.v1.0-ref.1` initially passed its 10 hand-authored fixtures but failed combinatorial testing:
+`REAL.v1.0-ref.1` initially passed 10/10 hand-authored fixtures but failed combinatorial testing:
 
 ```text
 51 total violations / 640 cases
@@ -31,22 +34,43 @@ node fuzz.mjs
 20 UNKNOWN_AUTHORITY_ACT
 ```
 
-`REAL.v1.0-ref.2` repairs those classes by requiring:
+`REAL.v1.0-ref.2` repaired those classes. Regression fixtures #11–#15 permanently encode the discovered failures.
 
-- SELF/SHARED multi-option cases → `OFFER`, never arbitrary first-option ACT;
-- public allocation → explicit legitimate policy rule **and explicit policy-selected option**;
-- safety/legal action → confirmed authority + documented review + explicit authorized selection;
-- unresolved authority → no substantive ACT; only a valid reversible probe may precede resolution.
+## Mutation-test repair history
 
-Five regression fixtures (#11–#15) permanently encode those failures.
+The first mutation pass killed only **5/9** injected bad behaviors. Four survived, exposing three genuine coverage gaps plus one redundantly protected public-selection invariant. Fixtures #16–#19 were added to test:
+
+- strong evidence pointing only to an option that is prohibited/unavailable;
+- a public policy selecting an option unsupported by evidence/acceptability constraints;
+- a safety/legal authorized selection unsupported by evidence/acceptability constraints;
+- a public rule existing without an explicit rule-produced selection.
+
+The redundant public-selection mutant was replaced with a deliberate double-fault mutation that removes both independent guards.
+
+Re-execution:
+
+```text
+KILLED M1 arbitrary multi-option selection
+KILLED M2 public-selection double fault
+KILLED M3 safety/legal review bypass
+KILLED M4 unknown-authority guard removal
+KILLED M5 missing-evidence bypass
+KILLED M6 subgroup-harm block removal
+KILLED M7 strong-evidence mismatch guard removal
+KILLED M8 public-selection support guard removal
+KILLED M9 safety-selection support guard removal
+
+mutation_score = 9/9
+```
 
 ## Files
 
 - `real-compiler.mjs` — reference compiler (`REAL.v1.0-ref.2`).
-- `fixtures.json` — 15 deterministic regression fixtures.
+- `fixtures.json` — 19 deterministic regression fixtures.
 - `test.mjs` — regression runner.
 - `fuzz.mjs` — 640-case combinatorial invariant fuzzer.
+- `mutation.mjs` — mutation-test harness.
 
 ## Scope
 
-This is a **reference conformance artifact**, not a clinical, legal, housing, benefits, or public-resource allocation system. Passing this suite does not establish real-world validity, fairness, lawful authority, or causal correctness of supplied evidence.
+This is a **reference conformance artifact**, not a clinical, legal, housing, benefits, or public-resource allocation system. Passing this suite does not establish real-world validity, fairness, lawful authority, external validity, production security, or causal correctness of supplied evidence.
