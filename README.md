@@ -109,6 +109,22 @@ COMPILE-AWAY-NONVALUE
 MINIMUM-VALID-PATH
 ```
 
+## Executable conformance harness
+
+A deterministic, zero-dependency Node.js reference implementation is published in [`conformance/`](conformance/).
+
+```bash
+node conformance/test.mjs
+```
+
+Current reference result:
+
+```text
+10/10 adversarial fixtures PASS
+```
+
+The suite covers simple-option bypass, uncertainty/probing, preference, public allocation, unknown authority, selective labels, value-sensitive ranking, null add-ons, subgroup harm, and missing evidence. Passing these fixtures verifies conformance to this **reference contract only**; it does not establish clinical/legal validity or real-world effectiveness.
+
 ## Public challenge threads
 
 1. [DISCUSSION](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
@@ -119,9 +135,9 @@ MINIMUM-VALID-PATH
 6. [METRICS](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
 7. [GOVERNANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
 
-## Current frontier
+## Next frontier
 
-Build and execute a machine-readable conformance suite. Same normalized inputs must produce the same valid path; unsupported evidence, causal claims, and authority must remain explicit rather than invented.
+Property/fuzz testing: search mechanically for contradictory outputs, unreachable states, branch-order dependence, unsupported action leaks, and optional modules that fail the `COMPLEXITY-MUST-EARN-KEEP` invariant.
 
 ---
 
