@@ -1,78 +1,76 @@
-# [SOLUTION] REAL v0.2 — Reconnect → Enable → [Anchor?] → Learn
+# [SOLUTION] REAL v0.3 — Diagnose → Minimum-Sufficient {Reconnect?, Enable?, Anchor?} → Learn
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-## Evidence repair — 2026-09-14
+Independent Evidence Pass #3 broke the assumption that `RECONNECT + ENABLE` is universally superior to the strongest simpler intervention. Some randomized trials show incremental benefit from a targeted relational layer; others show no added value. REAL is therefore no longer a fixed pipeline.
 
-Independent Evidence Pass #2 broke the original universal claim `durable local institutions → persistence of gains`.
-
-The evidence supports institutional continuity in some contexts, but does **not** establish localness or durability as universally causal. `ANCHOR` is therefore demoted from a mandatory stage to a conditional, evidence-gated persistence layer.
-
-## `DEF:REAL.v0.2`
+## `DEF:REAL.v0.3`
 
 ```text
-REAL.v0.2 := R→E→A?→L
+REAL.v0.3 := D → M{R?,E?,R+E?,A?} → L
 
-R := RECONNECT{belonging, trusted-human-contact, family/peer/community ties}
-E := ENABLE{housing, health, food, docs, mobility, income, work, skills, navigation}
-A? := ANCHOR{conditional persistence substrate}
-L := LEARN{baseline, measurement, causal audit, harm audit, repair, replication}
+D := DIAGNOSE active causal bottleneck(s)
+M := MINIMUM-SUFFICIENT module selection
+R? := RECONNECT only if relational deficit is causally relevant/testable
+E? := ENABLE only if practical barrier is causally relevant/testable
+R+E? := combine only if incremental additive value is predicted + measured
+A? := persistence substrate only if marginal persistence value exists
+L := LEARN{measure→compare→remove-nonvalue→repair→replicate}
 ```
 
-### `A?{ANCHOR}` activation rule
+## `DEF:INCREMENTAL-ADDITIVE-VALUE`
 
 ```text
-ENABLE A IFF:
-  persistence-dependency is demonstrated/plausible
-  & effective function is specified
-  & continuity adds value beyond service alone
-  & governance/capture risk <= threshold
-  & cost <= viable alternative
-  & exit/portability is preserved
+ΔADD := Outcome(E+R) − max{Outcome(E), Outcome(R)}
+        − ComplexityCost − ParticipantBurden − HarmRisk
 
-ELSE:
-  SKIP A
-  OR use a portable/nonlocal/temporary substrate.
+PASS IFF:
+  ΔADD on durable, decision-relevant outcomes > predeclared threshold
+  & persistence survives follow-up
+  & subgroup harms/inequities do not erase benefit
+  & simpler alternatives do not achieve equivalent results.
 ```
 
-## Evidence-repaired ANCHOR logic
+## Evidence-repaired C6
 
 ```text
-DURABLE-INSTITUTION ⇒ PERSISTENT-GAIN   // INVALID
-
-CAPABLE-INSTITUTION
-+ EFFECTIVE-FUNCTION
-+ CONTINUITY
-+ ACCOUNTABILITY
-+ RESOURCES
-+ ACCESS
-→ MAY improve persistence.
+C6(original) = BROKEN / OVERBROAD
+C6a minimum domain-specific enablement→target outcome = SUPPORTED
+C6b R added to effective E→incremental durable benefit = MIXED / CONTEXT-DEPENDENT
+C6c targeted relational component when interpersonal deficit is active = SELECTIVELY SUPPORTED
+C6d more integrated components→broader cross-domain gains = NOT SUPPORTED GENERALLY
+C6e peer/social add-on→housing increment beyond effective housing support = NOT SUPPORTED GENERALLY
 ```
 
-Positive evidence from community-randomized systems such as Communities That Care and PROSPER, Community Health Center natural experiments, and Oxford House trials shows that continuity of capable institutions can matter for selected outcomes. But these studies bundle the institution with effective programs, service access, housing, funding, peer governance, training, or technical assistance. They do not isolate `local + durable` as the causal ingredient.
-
-Counterevidence from community-driven-development evaluations shows that locally embedded institutions can deliver infrastructure without improving social cohesion, governance, conflict, or welfare.
-
-## ANCHOR invariants
+## Module laws
 
 ```text
-ANCHOR-NOT-IDOL:
+MINIMUM-SUFFICIENT-FIRST:
+Use the smallest intervention that clears the active bottleneck.
+
+NO-STACK-PREMIUM:
+More components receive no presumption of superiority.
+
+MARGINAL-COMPONENT-TEST:
+ΔX := Outcome(base+X) − Outcome(base)
+      − Cost(X) − Burden(X) − Harm(X).
+Keep X IFF ΔX > threshold.
+
+REMOVE-NONVALUE:
+If X adds no durable net benefit, delete X from that context.
+
+MECHANISM-MATCH:
+Activate a component only for a named bottleneck + plausible mechanism + measurable target.
+```
+
+## ANCHOR remains conditional
+
+```text
+A?{ANCHOR} := CONDITIONAL-PERSISTENCE-SUBSTRATE
 Institution-survival ≠ participant-success.
-
-PERSISTENCE-TEST:
-If institution persists but outcomes do not,
-ANCHOR = FAIL.
-
-MARGINAL-VALUE-TEST:
-If the same sustained outcome occurs without anchoring,
-ANCHOR = unnecessary for that context.
-
-ANTI-CAPTURE:
-Durability that increases institutional power faster than participant agency
-= NEGATIVE ANCHOR.
 ```
 
-## Non-negotiable REAL constraints
+## Non-negotiable constraints
 
 ```text
 DIGNITY-FIRST
@@ -86,10 +84,8 @@ MEASURE HARMS AS WELL AS BENEFITS
 CHEAPEST EFFECTIVE INTERVENTION FIRST
 ```
 
-## Current challenge
+## Next falsification target
 
-The next high-value break target is **C6 / ENABLEMENT**:
+**DIAGNOSE:** can REAL reproducibly identify the active causal bottleneck before intervention, or does modularity merely move uncertainty upstream?
 
-> Does combining practical enablement with social connection produce more durable agency/stability than the strongest single-domain intervention, or is REAL adding complexity without incremental benefit?
-
-Evidence trail: GitHub Issue #3, Independent Evidence Pass #2.
+Evidence trail: Issue #3, Independent Evidence Passes #1–#3.
