@@ -2,75 +2,56 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-## Current ledger
+## Repaired claim ledger
 
 ```text
-C1 institutional/economic rupture → legitimate-role loss
-C2 legitimate-role loss → dignity/agency/belonging loss
-C3 social-bond rupture → alienation/exclusion
-C4 dignity/agency/belonging loss → vulnerability to destructive coping
-C5 alienation/exclusion → vulnerability to exploitative identity/status systems
-
 C6(original) E+R→agency/stability = BROKEN / OVERBROAD
-C6a minimum domain-specific enablement→target outcome = SUPPORTED
-C6b add R to effective E→incremental durable benefit = MIXED / CONTEXT-DEPENDENT
-C6c targeted relational add-on for active interpersonal deficit = SELECTIVELY SUPPORTED
-C6d more components→broader gains = NOT SUPPORTED GENERALLY
-C6e peer/social add-on→extra housing stability = NOT SUPPORTED GENERALLY
-
 C7(original) durable local institution→persistent gains = BROKEN / OVERCLAIMED
-C7a continuity→implementation quality = SUPPORTED
-C7b locality→added benefit = UNKNOWN
-C7c durability→persistence = PLAUSIBLE/MIXED
-C7d generic durable institution→good outcome = NOT SUPPORTED
-
 D0(original) intake assessment→active causal bottleneck = BROKEN / OVERCLAIMED
-D1 structured assessment→observable/reported needs = FEASIBLE / TOOL-DEPENDENT
-D2 intake assessment→causally dominant need = NOT ESTABLISHED
-D3 inferential formulation agreement = VARIABLE
-D4 structured rules→improved consistency = CONTEXT-DEPENDENT
-D5 response-based sequential testing→adaptive decision-rule evidence = SUPPORTED METHODOLOGY
+P0 response to probe→mechanism confirmed = BROKEN
+K0 mechanism required before useful action = NOT SUPPORTED
+U0 universal objective utility scalar = BROKEN
+C0 model/top score creates authority = BROKEN
+L0 naive deploy→observe→retrain = BROKEN / SELF-CONFIRMATION RISK
+PIPELINE0 all cases traverse all REAL stages = OVER-SPECIFIED
 ```
 
-## Current architecture
+## `REAL.v1.0`
 
 ```text
-REAL.v0.4 := O → H? → P → Δ → M → L
+COMPILE(Context) → MIN-VALID-PATH → ACT/OFFER/DEFER → MEASURE → TRACE/AUDIT
 
-O := OBSERVE
-H? := HYPOTHESIZE + alternatives + confidence + UNKNOWN
-P := minimal safe/reversible mechanism-matched PROBE
-Δ := preregistered MEASURE
-M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
-L := LEARN/update
+CORE := O{OBSERVE} + B{BOUNDARIES} + C{CHOICE} + T{TRACE}
+OPTIONAL := H? + P? + V+ + G+ + K? + A? + ADAPT?
+SYSTEM := L*{policy-aware learning + audit + governed release}
 ```
 
-## Required treatment for every claim
+## Required treatment for every proposed optional module
 
-- observations separated from inference;
-- candidate mechanism + alternatives;
-- explicit UNKNOWN state;
-- evidence + counterevidence;
-- measurable target;
-- preregistered probe and decision threshold;
-- marginal/additive-value test;
-- falsification/revision rule;
-- fairness/burden/harm analysis.
+```text
+1 name the decision problem it changes
+2 state required input/evidence
+3 state expected marginal decision/safety/audit value
+4 state burden/cost/error risk
+5 define compile-in condition
+6 define compile-away condition
+7 expose UNKNOWN/unsupported branches
+8 define falsification/conformance test
+```
 
 ## Invariants
 
 ```text
-OBSERVE-BEFORE-INFER
 UNKNOWN-IS-VALID
-NO-SCORE-TO-CAUSALITY
-NO-SCORE-TO-ALLOCATION
-HYPOTHESIS-NOT-DIAGNOSIS
-NO-POSTHOC-RESCUE
 NO-CHAIN-INFERENCE
 NO-STACK-PREMIUM
 MINIMUM-SUFFICIENT-FIRST
-REMOVE-NONVALUE
-ANCHOR-NOT-IDOL
+NO-HIDDEN-WEIGHTS
+NO-AI-SOVEREIGNTY
+NO-SELF-VALIDATION
+COMPLEXITY-MUST-EARN-KEEP
+COMPILE-AWAY-NONVALUE
+MINIMUM-VALID-PATH
 ```
 
-Evidence trail: Issue #3, Independent Evidence Passes #1–#4.
+Evidence trail: Issue #3, Passes #1–#10.
