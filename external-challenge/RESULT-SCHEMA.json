@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "REAL.v1.0-independent-result.schema.json",
+  "title": "REAL v1.0 Independent Implementation Result",
+  "type": "object",
+  "required": [
+    "input_id",
+    "disposition",
+    "selection",
+    "modules",
+    "unknown",
+    "flags",
+    "trace",
+    "invariants"
+  ],
+  "properties": {
+    "input_id": {"type": "string"},
+    "disposition": {
+      "type": "string",
+      "enum": ["ACT", "OFFER", "DEFER", "NO_ACTION", "PROBE"]
+    },
+    "selection": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      ]
+    },
+    "modules": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "unknown": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "flags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule"],
+        "properties": {
+          "rule": {"type": "string"},
+          "detail": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "invariants": {
+      "type": "object",
+      "required": [
+        "unknown_preserved",
+        "authority_not_invented",
+        "mechanism_not_inferred_from_response",
+        "automatic_retrain"
+      ],
+      "properties": {
+        "unknown_preserved": {"type": "boolean"},
+        "authority_not_invented": {"type": "boolean"},
+        "mechanism_not_inferred_from_response": {"type": "boolean"},
+        "automatic_retrain": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "compiler_version": {"type": "string"},
+    "reason": {"type": "string"}
+  },
+  "additionalProperties": true,
+  "x-real-v1-normative-fields": [
+    "input_id",
+    "disposition",
+    "selection",
+    "modules",
+    "unknown",
+    "flags",
+    "trace[].rule",
+    "invariants"
+  ],
+  "x-real-v1-nonnormative-fields": [
+    "compiler_version",
+    "reason",
+    "trace[].detail"
+  ]
+}
