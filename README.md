@@ -2,83 +2,97 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-> Can destructive social outcomes be reduced by identifying the active causal bottleneck and using the **minimum sufficient** intervention—without presuming that larger service stacks are better?
+> Can destructive social outcomes be reduced without pretending that an intake score reveals causality—by separating observation from hypothesis and earning each intervention through prospective testing?
 
-This repository converts the supplied source narrative into a **public, falsifiable challenge**. The source is hypothesis-generating material, not proof.
+This repository converts the initiating source narrative into a **public, falsifiable challenge**. Narrative ≠ causation; hypothesis ≠ proof.
 
-## `DEF:REAL:RWAL::SOLUTION` — evidence-repaired v0.3
+## `DEF:REAL.v0.4`
 
 ```text
-REAL.v0.3 := D → M{R?,E?,R+E?,A?} → L
+REAL.v0.4 := O → H? → P → Δ → M → L
 
-D := DIAGNOSE active causal bottleneck(s)
-M := MINIMUM-SUFFICIENT module selection
-R? := RECONNECT iff relational deficit is causally relevant/testable
-E? := ENABLE iff practical barrier is causally relevant/testable
-R+E? := combine iff incremental additive value is predicted + measured
-A? := ANCHOR iff marginal persistence value exists
-L := LEARN{measure→compare→remove-nonvalue→repair→replicate}
+O := OBSERVE measurable/reported constraints, assets, preferences, risks
+H? := HYPOTHESIZE candidate bottleneck(s) + confidence + alternatives + UNKNOWN
+P := PROBE with smallest safe/reversible mechanism-matched intervention
+Δ := MEASURE preregistered response + burden + harm + cost + persistence signal
+M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
+L := LEARN/update hypothesis + decision rule
 ```
 
-## `DEF:INCREMENTAL-ADDITIVE-VALUE`
+Optional modules:
 
 ```text
-ΔADD := Outcome(E+R) − max{Outcome(E), Outcome(R)}
-        − ComplexityCost − ParticipantBurden − HarmRisk
+R? := RECONNECT
+E? := ENABLE
+A? := ANCHOR / persistence substrate
 ```
 
-A larger stack receives **no presumption of superiority**.
+They are candidate interventions, not truths inferred from a score.
 
-## Evidence repairs
-
-### C6 / ENABLE + RECONNECT
+## Current evidence repairs
 
 ```text
-C6(original) = BROKEN / OVERBROAD
-C6a minimum domain-specific enablement→target outcome = SUPPORTED
-C6b R added to effective E→incremental durable benefit = MIXED / CONTEXT-DEPENDENT
-C6c targeted relational add-on when interpersonal deficit is active = SELECTIVELY SUPPORTED
-C6d more components→broader cross-domain gains = NOT SUPPORTED GENERALLY
-C6e peer/social add-on→extra housing stability = NOT SUPPORTED GENERALLY
+C6(original) E+R→agency/stability = BROKEN / OVERBROAD
+C7(original) durable local institution→persistent gains = BROKEN / OVERCLAIMED
+D0(original) intake assessment→active causal bottleneck = BROKEN / OVERCLAIMED
+
+D1 structured need detection = FEASIBLE / TOOL-DEPENDENT
+D2 causal dominance from intake = NOT ESTABLISHED
+D3 inferential inter-rater agreement = VARIABLE
+D4 structured rules improve consistency = CONTEXT-DEPENDENT
+D5 response-based adaptive testing = SUPPORTED METHODOLOGY
 ```
 
-### C7 / ANCHOR
+## `DEF:BOTTLENECK-HYPOTHESIS`
 
 ```text
-C7(original) durable local institutions→persistent gains = BROKEN / OVERCLAIMED
-C7a continuity→implementation quality = SUPPORTED
-C7b locality→added benefit = UNKNOWN
-C7c durability→persistence = PLAUSIBLE/MIXED
-C7d generic durable institution→good outcome = NOT SUPPORTED
+{
+ observable evidence,
+ candidate mechanism,
+ competing explanations,
+ confidence,
+ UNKNOWN,
+ minimal probe,
+ target outcome,
+ response threshold,
+ stop/harm rule,
+ revision rule
+}
 ```
 
 ## RWAL invariants
 
 ```text
-CONTRADICTION>0 → EXPOSE, DO-NOT-HIDE.
-MODEL-OVERFLOW → SPLIT-BRANCHES, DO-NOT-TRUNCATE.
-NO-CHAIN-INFERENCE: Evidence(A→B) & Evidence(B→C) ≠ Proof(A→C).
-NO-OUTCOME-SUBSTITUTION: Housing↑ ≠ MentalHealth↑ ≠ Sobriety↑ ≠ Employment↑ ≠ Violence↓.
-NO-STACK-PREMIUM: More components receive no presumption of superiority.
-MINIMUM-SUFFICIENT-FIRST: Use the smallest intervention that clears the active bottleneck.
-REMOVE-NONVALUE: If X adds no durable net benefit, delete X from that context.
-ANCHOR-NOT-IDOL: Institution-survival ≠ participant-success.
-REAL fails IFF institutional-control↑ faster than participant-agency↑.
+OBSERVE-BEFORE-INFER
+UNKNOWN-IS-VALID
+NO-SCORE-TO-CAUSALITY
+NO-SCORE-TO-ALLOCATION
+HYPOTHESIS-NOT-DIAGNOSIS
+PROBE-MINIMUM
+PREDECLARE-DECISION-RULE
+NO-POSTHOC-RESCUE
+NO-STACK-PREMIUM
+MINIMUM-SUFFICIENT-FIRST
+MARGINAL-COMPONENT-TEST
+REMOVE-NONVALUE
+ANCHOR-NOT-IDOL
+NO-CHAIN-INFERENCE
+NO-OUTCOME-SUBSTITUTION
 ```
 
 ## Public challenge threads
 
-1. [DISCUSSION — dispute the problem model](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
-2. [MODEL — build and falsify the causal graph](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
-3. [EVIDENCE — adversarial evidence/counterevidence passes](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
-4. [SOLUTION — REAL v0.3 adaptive architecture](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
-5. [PILOT — design a falsifiable field test](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
-6. [METRICS — measure outcomes without gaming them](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
-7. [GOVERNANCE — prevent the solution becoming another control system](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
+1. [DISCUSSION](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
+2. [MODEL](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
+3. [EVIDENCE — adversarial passes #1–#4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
+4. [SOLUTION — REAL v0.4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
+5. [PILOT — falsify REAL v0.4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
+6. [METRICS — reliability, uncertainty, probe effect, adaptive value](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
+7. [GOVERNANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
 
-## Current highest-value break target
+## Current falsification frontier
 
-**DIAGNOSE:** can REAL reproducibly identify the active bottleneck before intervention, or does adaptive modularity simply move uncertainty upstream?
+**`P := PROBE`** — a useful response to an intervention may not prove the hypothesized mechanism. The next attack asks whether regression to the mean, spontaneous change, placebo/context effects, delayed effects, fidelity failures, and interactions can make REAL update the wrong causal hypothesis.
 
 ---
 
