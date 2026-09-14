@@ -2,7 +2,7 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-Deterministic, zero-dependency Node.js reference compiler for the public REAL/RWAL challenge.
+Executable reference and cross-language semantic conformance suite for the public REAL/RWAL challenge.
 
 ## Run
 
@@ -10,16 +10,29 @@ Deterministic, zero-dependency Node.js reference compiler for the public REAL/RW
 node test.mjs
 node fuzz.mjs
 node mutation.mjs
+python3 crosscheck.py
+python3 crosscheck_fuzz.py
 ```
 
 ## Current result
 
 ```text
+JavaScript reference: REAL.v1.0-ref.2
+Python reference:     REAL.v1.0-py-ref.1
+
 19/19 regression fixtures PASS
 640/640 combinatorial property cases PASS
 9/9 intentionally dangerous mutants KILLED
 0 current invariant violations
 0 mutation survivors
+
+JS ↔ Python regression semantic comparison:
+19/19 cases
+0 semantic mismatches
+
+JS ↔ Python combinatorial semantic comparison:
+640/640 states
+0 semantic mismatches
 ```
 
 ## Fuzz repair history
@@ -63,13 +76,42 @@ KILLED M9 safety-selection support guard removal
 mutation_score = 9/9
 ```
 
+## Cross-language replication
+
+`real_compiler.py` is a separately implemented Python version of the normative REAL.v1.0 contract. It is cross-checked against the JavaScript reference using semantic outputs rather than compiler-version strings or explanatory prose.
+
+Compared fields:
+
+```text
+input_id
+disposition
+selection
+modules
+unknown
+flags
+trace
+invariants
+```
+
+Current cross-language result:
+
+```text
+19 normative regression inputs → 0 semantic mismatches
+640 combinatorial states       → 0 semantic mismatches
+```
+
+This is **cross-language replication within the same project**, not independent external validation.
+
 ## Files
 
-- `real-compiler.mjs` — reference compiler (`REAL.v1.0-ref.2`).
+- `real-compiler.mjs` — JavaScript reference compiler (`REAL.v1.0-ref.2`).
+- `real_compiler.py` — separately implemented Python reference (`REAL.v1.0-py-ref.1`).
 - `fixtures.json` — 19 deterministic regression fixtures.
 - `test.mjs` — regression runner.
 - `fuzz.mjs` — 640-case combinatorial invariant fuzzer.
 - `mutation.mjs` — mutation-test harness.
+- `crosscheck.py` — JS↔Python semantic comparison across regression fixtures.
+- `crosscheck_fuzz.py` — JS↔Python semantic comparison across 640 combinatorial states.
 
 ## Scope
 
