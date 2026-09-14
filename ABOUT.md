@@ -1,16 +1,23 @@
-# REAL / RWAL — Public Discussion Starter
+# REAL / RWAL — Public Adversarial Decision Challenge
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-This repository opens a public, falsifiable discussion distilled from the supplied source archive.
+This repository began by testing a social-infrastructure hypothesis distilled from the supplied source archive. Repeated evidence, causal, governance, and executable attacks broke the original fixed `Reconnect → Enable → Anchor → Learn` pipeline.
 
-## DEF:REAL:RWAL::SOLUTION
+## Current canonical formulation — `REAL.v1.0`
 
 ```text
-REAL := RECONNECT → ENABLE → ANCHOR → LEARN
-RWAL::REAL::SOLUTION := MAX{DIGNITY,AGENCY,CONNECTION,STABILITY}
-& MIN{COERCION,HARM,FRICTION,PRIVACY-LOSS}
-& EVIDENCE-GATED & LOCAL-FIRST & MEASURABLE & FALSIFIABLE & REVERSIBLE & ITERATIVE.
+REAL.v1.0 := COMPILE(Context)
+             → MIN-VALID-PATH
+             → ACT | OFFER | DEFER | NO-ACTION
+             → MEASURE
+             → TRACE/AUDIT
+
+CORE := OBSERVE + BOUNDARIES{rights,safety,authority,evidence} + CHOICE + TRACE
+OPTIONAL := H? + P? + V+ + G+ + K? + A? + ADAPT?
+SYSTEM := policy-aware learning + fairness/drift audit + governed validation/promotion
 ```
 
-Every causal arrow is open to challenge, evidence, counterevidence, falsification, and repair.
+Every optional component must earn inclusion by changing decision quality, safety, legitimate authority, or auditability. Unsupported causality and authority remain `UNKNOWN` rather than being invented.
+
+The original REAL formulation is retained only as **historical provenance**, not as the current validated architecture.
