@@ -1,50 +1,102 @@
-# [GOVERNANCE] Prevent the “solution” from becoming another system of control
+# [GOVERNANCE] REAL v1.0 — authority routing, rights, appeals, policy learning, and anti-self-validation
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
 ## Objective
 
-Design safeguards so a people-centered intervention cannot quietly become a surveillance, coercion, dependency, or institutional self-preservation machine.
+Ensure REAL never converts technical ranking into illegitimate authority and never treats policy-generated observations as neutral evidence.
 
-## Core invariant
-
-```text
-REAL fails IFF institutional-control↑ faster than participant-agency↑.
-```
-
-## Required safeguards
-
-- voluntary participation wherever legally/clinically possible;
-- no punishment for declining optional services or research participation;
-- minimum-necessary-data collection;
-- clear retention/deletion rules;
-- no sale or unrelated secondary use of participant data;
-- explicit human appeal/review path for consequential decisions;
-- accessibility by default;
-- conflicts-of-interest disclosure;
-- adverse-event and grievance channel independent enough to matter;
-- public aggregate metrics without exposing personal records;
-- exit/portability plan so participants are not locked to one program/vendor;
-- community/participant representation in review and redesign.
-
-## Governance tests
-
-Ask repeatedly:
-
-1. Can a participant say **no** without losing unrelated rights or services?
-2. Can they understand what data is collected and why?
-3. Can they leave without being made worse off?
-4. Can an error be appealed and corrected?
-5. Does the institution benefit from keeping someone classified as a client?
-6. Are negative results and harms publishable?
-7. Can a cheaper, simpler, less intrusive alternative replace the current mechanism?
-
-## Stop condition
+## Authority router
 
 ```text
-IF harm↑ OR coercion↑ OR privacy-risk↑ OR inequity↑
-WITHOUT proportionate, evidenced participant benefit
-→ STOP/REPAIR before SCALE.
+G(decision) ∈ {
+  SELF,
+  SHARED,
+  PUBLIC_ALLOCATION,
+  SAFETY_LEGAL,
+  UNKNOWN_AUTHORITY
+}
 ```
 
-The challenge is to make safeguards operational rather than decorative. Propose concrete veto points, review roles, thresholds, and audit artifacts.
+```text
+SELF:
+competent participant controls among acceptable personal options.
+
+SHARED:
+participant values/preferences + evidence + qualified professional judgment.
+
+PUBLIC_ALLOCATION:
+legitimate predeclared rule + public reasons + consistency + engagement + appeal/revision.
+
+SAFETY_LEGAL:
+applicable authority + necessity/proportionality + least restrictive path + documented review.
+
+UNKNOWN_AUTHORITY:
+no substantive irreversible/restrictive allocation action; escalate to legitimate human process.
+```
+
+## Governance invariants
+
+```text
+AUTHORITY-BEFORE-OPTIMIZATION
+DECISION-TYPE-NOT-PERSON-TYPE
+RIGHTS-BEFORE-OPTIMIZATION
+NO-AI-SOVEREIGNTY
+REASONS-PUBLIC-FOR-PUBLIC-RESOURCES
+APPEAL-AND-REVISION
+CONSISTENCY-WATCH
+UNKNOWN-AUTHORITY-STOPS-IRREVERSIBLE-ACTION
+```
+
+## Policy-aware learning
+
+```text
+L* := LOG
+      → IDENTIFY selection mechanism
+      → ESTIMATE only supported quantities
+      → AUDIT missing/censored/subgroup outcomes
+      → UPDATE in sandbox/shadow
+      → PROSPECTIVE/EXTERNAL VALIDATE
+      → GOVERNED RELEASE
+      → CONTINUOUS MONITOR
+```
+
+No direct high-stakes `production outcomes → silent retraining → new allocation rule` path.
+
+## Learning-loop invariants
+
+```text
+POLICY-CHANGES-DATA
+SELECTIVE-LABEL-WATCH
+NOT-OFFERED ≠ WOULD-NOT-BENEFIT
+NO-SELF-VALIDATION
+SUPPORT-CHECK
+SHADOW-BEFORE-PROMOTION
+VERSION-EVERYTHING
+FAIRNESS-DRIFT-WATCH
+NO-AUTO-RETRAIN-HIGH-STAKES
+```
+
+## Value governance
+
+When material values conflict:
+
+```text
+1 hard rights/safety constraints
+2 Pareto dominance where available
+3 informed participant preference for personal acceptable choices
+4 explicit sourced tradeoff rules + sensitivity analysis
+5 legitimate public governance for scarce-resource allocation
+```
+
+No hidden universal utility weights.
+
+## Failure invariant
+
+```text
+institutional/model power↑
+faster than participant rights/agency/accountability↑
+→ REAL GOVERNANCE FAIL
+```
+
+Evidence trail: Issue #3 adversarial passes and live Issue #7.
