@@ -1,99 +1,61 @@
-# [METRICS] REAL v0.3 — target outcome, marginal module value, burden, and persistence
+# [METRICS] REAL v0.4 — observation reliability, hypothesis uncertainty, probe effect, adaptive value
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
 ## Objective
 
-Measure whether each optional REAL module improves human outcomes **incrementally**, not whether a larger service package generates more activity.
-
-## Metric families
+Measure whether REAL.v0.4's observation→hypothesis→probe→adapt logic is reproducible and valid.
 
 ```text
-TARGET := outcome directly linked to diagnosed bottleneck
-STABILITY := relevant continuity in housing/food/healthcare/docs/income
-AGENCY := participant control + ability to navigate without unnecessary dependency
-CONNECTION := trusted ties / reciprocal support / belonging when R is active
-ECONOMIC := income / job or education persistence when relevant
-SAFETY := adverse events / victimization / crisis use / participant-reported safety
-FRICTION := time-to-help / duplicate forms / failed referrals / travel / wait
-DIGNITY := respect / autonomy / stigma / procedural fairness
-BURDEN := appointments + time + cognitive load + disclosure + travel + fatigue
-COST := program + participant-borne cost
-PERSISTENCE := outcome retained after active support window
+O-QUALITY := completeness | missingness | observer agreement | self-report consistency
+H-QUALITY := hypothesis agreement | confidence calibration | UNKNOWN rate | alternatives covered
+P-QUALITY := fidelity | reversibility | exposure/dose | contamination | burden
+Δ-QUALITY := target change | counterfactual quality | timing | persistence | harm | cost
+M-QUALITY := decision-rule adherence | post-hoc deviation rate
+L-QUALITY := future prediction improvement, not retrospective fit
 ```
 
-## Core additive-value metric
+## Separate fact from inference
 
 ```text
-ΔX_raw := Outcome(BASE+X) − Outcome(BASE)
-
-ΔX_net := ΔX_raw
-          − normalized Cost(X)
-          − ParticipantBurden(X)
-          − HarmRisk(X)
-          − InequityPenalty(X)
+FACT-AGREEMENT := agreement on observed/reported inputs
+HYPOTHESIS-AGREEMENT := agreement on candidate mechanisms
 ```
 
-Normalization/weights must be preregistered before results are known.
+High fact agreement + low hypothesis agreement means the causal-classification layer is unstable.
 
-## Required comparison
-
-```text
-BASE vs BASE+X
-TARGET outcome
-cross-domain outcomes
-burden
-cost
-harms
-subgroups
-persistence
-```
-
-Without `BASE vs BASE+X`, marginal component value is unidentified.
-
-## Diagnostic-quality metrics
+## Uncertainty metrics
 
 ```text
-INTER-RATER agreement
-TEST-RETEST stability
-PREDICTIVE validity
+UNKNOWN-RATE
+FORCED-CLASSIFICATION-RATE
+CONFIDENCE-CALIBRATION
+TOP-1 vs TOP-k hypothesis performance
 FALSE-POSITIVE module activation
-FALSE-NEGATIVE missed bottleneck
-CLASSIFICATION burden/time
-OUTCOME by diagnosis-module match
+FALSE-NEGATIVE missed constraint
+HYPOTHESIS-REVISION rate after probe
 ```
 
-## Anti-gaming laws
+## Probe metrics
 
 ```text
-ACTIVITY-WATCH:
-referrals↑ | visits↑ | case-notes↑
-without target-outcome↑
-→ NO SUCCESS CREDIT
-
-GOODHART-WATCH:
-metric↑ AND lived-outcome↔/↓
-→ FLAG
-
-STACK-WATCH:
-components↑ AND Δnet↔/↓
-→ REMOVE component(s)
-
-PERSISTENCE-WATCH:
-short-term gain↑ but follow-up returns to baseline
-→ transient effect, NOT durable success
+Δprobe_raw := Outcome_after − Outcome_before
+Δprobe_causal := Outcome_with_probe − credible counterfactual
+Δprobe_net := Δprobe_causal − Cost − Burden − Harm − InequityPenalty
 ```
 
-## Decision rule
+A positive pre/post change is not automatically causal.
+
+## Anti-rationalization laws
 
 ```text
-KEEP X IFF:
-  ΔX_net > predeclared meaningful threshold
-  & effect persists
-  & no unacceptable subgroup harm
-  & simpler/cheaper option is not equivalent.
-
-REMOVE X OTHERWISE.
+POSTHOC-WATCH: new causal story only after outcome known → FLAG
+FORCED-CERTAINTY-WATCH: UNKNOWN evidence but one confident bottleneck → FAIL
+PROBE-CAUSALITY-WATCH: response to X treated as proof X was mechanism → FLAG
+ASSESSOR-WATCH: different assessor→different allocation → reliability failure
+FAIRNESS-WATCH: unexplained protected-group allocation disparity → investigate before deployment
 ```
 
-Evidence trail: Issue #3, Independent Evidence Pass #3.
+KEEP/SWITCH/AUGMENT/STOP thresholds must be preregistered.
+
+Evidence trail: Issue #3, Independent Evidence Pass #4.
