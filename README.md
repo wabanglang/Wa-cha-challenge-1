@@ -4,7 +4,7 @@
 
 > Build the shortest evidence-, rights-, authority-, and uncertainty-valid path to a human decision—then expose enough trace to falsify it.
 
-This repository converts the initiating narrative into a **public adversarial research challenge**. Ten independent evidence/red-team passes have progressively removed unsupported assumptions rather than defending the original formulation.
+This repository converts the initiating narrative into a **public adversarial research challenge**. The model has been repeatedly attacked, broken, repaired, and simplified rather than defended unchanged.
 
 ## `DEF:REAL.v1.0` — Minimum-Valid Decision Compiler
 
@@ -31,12 +31,12 @@ CORE := {
 
 ```text
 OPTIONAL := {
-  H?     hypotheses + UNKNOWN,
-  P?     probe/experiment,
-  V+     expanded value vector,
-  G+     nontrivial governance routing,
-  K?     mechanism model,
-  A?     persistence substrate,
+  H? hypotheses + UNKNOWN,
+  P? probe/experiment,
+  V+ expanded value vector,
+  G+ nontrivial governance routing,
+  K? mechanism model,
+  A? persistence substrate,
   ADAPT? sequential treatment logic
 }
 ```
@@ -115,29 +115,36 @@ A deterministic, zero-dependency Node.js reference implementation is published i
 
 ```bash
 node conformance/test.mjs
+node conformance/fuzz.mjs
+node conformance/mutation.mjs
 ```
 
-Current reference result:
+Current reference status:
 
 ```text
-10/10 adversarial fixtures PASS
+REAL.v1.0-ref.2
+19/19 regression fixtures PASS
+640/640 combinatorial property cases PASS
+9/9 intentionally dangerous mutants KILLED
+0 current invariant violations
+0 mutation survivors
 ```
 
-The suite covers simple-option bypass, uncertainty/probing, preference, public allocation, unknown authority, selective labels, value-sensitive ranking, null add-ons, subgroup harm, and missing evidence. Passing these fixtures verifies conformance to this **reference contract only**; it does not establish clinical/legal validity or real-world effectiveness.
+The initial executable version is preserved in the public evidence trail: `ref.1` passed its 10 hand-authored fixtures but failed 51 property checks; the failures were repaired and converted into regression tests. Passing this reference suite establishes **internal conformance only**—not clinical/legal validity, real-world effectiveness, fairness across actual populations, or production security.
 
 ## Public challenge threads
 
 1. [DISCUSSION](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
 2. [MODEL](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
-3. [EVIDENCE — adversarial Passes #1–#10](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
+3. [EVIDENCE — adversarial Passes #1–#12](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
 4. [SOLUTION — REAL v1.0](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
 5. [PILOT / CONFORMANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
 6. [METRICS](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
 7. [GOVERNANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
 
-## Next frontier
+## Current frontier
 
-Property/fuzz testing: search mechanically for contradictory outputs, unreachable states, branch-order dependence, unsupported action leaks, and optional modules that fail the `COMPLEXITY-MUST-EARN-KEEP` invariant.
+Independent replication and semantic/stateful adversarial testing. Internal tests can demonstrate that this implementation catches the failure modes encoded in its suite; they cannot demonstrate that the suite contains every important failure mode.
 
 ---
 
