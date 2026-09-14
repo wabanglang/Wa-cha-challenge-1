@@ -2,65 +2,85 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-> Can destructive social outcomes be reduced without pretending that an intake score reveals causality—by separating observation from hypothesis and earning each intervention through prospective testing?
+> Build the shortest evidence-, rights-, authority-, and uncertainty-valid path to a human decision—then expose enough trace to falsify it.
 
-This repository converts the initiating source narrative into a **public, falsifiable challenge**. Narrative ≠ causation; hypothesis ≠ proof.
+This repository converts the initiating narrative into a **public adversarial research challenge**. Ten independent evidence/red-team passes have progressively removed unsupported assumptions rather than defending the original formulation.
 
-## `DEF:REAL.v0.4`
+## `DEF:REAL.v1.0` — Minimum-Valid Decision Compiler
 
 ```text
-REAL.v0.4 := O → H? → P → Δ → M → L
-
-O := OBSERVE measurable/reported constraints, assets, preferences, risks
-H? := HYPOTHESIZE candidate bottleneck(s) + confidence + alternatives + UNKNOWN
-P := PROBE with smallest safe/reversible mechanism-matched intervention
-Δ := MEASURE preregistered response + burden + harm + cost + persistence signal
-M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
-L := LEARN/update hypothesis + decision rule
+REAL.v1.0 := COMPILE(Context)
+             → MIN-VALID-PATH
+             → ACT | OFFER | DEFER | NO-ACTION
+             → MEASURE
+             → TRACE/AUDIT
 ```
 
-Optional modules:
+### Core
 
 ```text
-R? := RECONNECT
-E? := ENABLE
-A? := ANCHOR / persistence substrate
-```
-
-They are candidate interventions, not truths inferred from a score.
-
-## Current evidence repairs
-
-```text
-C6(original) E+R→agency/stability = BROKEN / OVERBROAD
-C7(original) durable local institution→persistent gains = BROKEN / OVERCLAIMED
-D0(original) intake assessment→active causal bottleneck = BROKEN / OVERCLAIMED
-
-D1 structured need detection = FEASIBLE / TOOL-DEPENDENT
-D2 causal dominance from intake = NOT ESTABLISHED
-D3 inferential inter-rater agreement = VARIABLE
-D4 structured rules improve consistency = CONTEXT-DEPENDENT
-D5 response-based adaptive testing = SUPPORTED METHODOLOGY
-```
-
-## `DEF:BOTTLENECK-HYPOTHESIS`
-
-```text
-{
- observable evidence,
- candidate mechanism,
- competing explanations,
- confidence,
- UNKNOWN,
- minimal probe,
- target outcome,
- response threshold,
- stop/harm rule,
- revision rule
+CORE := {
+  O := OBSERVE decision-relevant state,
+  B := BOUNDARIES{rights,safety,authority,evidence-support},
+  C := CHOOSE/OFFER/DEFER transparently,
+  T := TRACE{reasons,uncertainty,version,outcome}
 }
 ```
 
-## RWAL invariants
+### Optional — only when marginally required
+
+```text
+OPTIONAL := {
+  H?     hypotheses + UNKNOWN,
+  P?     probe/experiment,
+  V+     expanded value vector,
+  G+     nontrivial governance routing,
+  K?     mechanism model,
+  A?     persistence substrate,
+  ADAPT? sequential treatment logic
+}
+```
+
+### System layer
+
+```text
+SYSTEM := {
+  L* policy-aware learning,
+  fairness/drift audit,
+  external/prospective validation,
+  governed version promotion
+}
+```
+
+## What the attacks broke
+
+```text
+E+R universally additive                         = BROKEN
+local durable institution→persistent gains       = BROKEN
+intake assessment→causal bottleneck              = BROKEN
+probe response→mechanism proof                   = BROKEN
+mechanism certainty mandatory                    = BROKEN
+one universal objective utility scalar           = BROKEN
+model/top score→legitimate authority              = BROKEN
+naive deploy→observe→retrain                      = BROKEN
+mandatory maximal REAL pipeline                  = OVER-SPECIFIED
+```
+
+## What survives
+
+```text
+OBSERVE enough to decide
+RESPECT rights/safety/authority boundaries
+USE best applicable comparative evidence
+EXPOSE uncertainty / preserve UNKNOWN
+CHOOSE/OFFER/DEFER transparently
+MEASURE outcomes when material
+TRACE provenance + version
+AUDIT policy-level learning for selection/fairness/drift
+ADD complexity only when it changes decision quality/safety/auditability
+```
+
+## Mandatory laws
 
 ```text
 OBSERVE-BEFORE-INFER
@@ -68,32 +88,41 @@ UNKNOWN-IS-VALID
 NO-SCORE-TO-CAUSALITY
 NO-SCORE-TO-ALLOCATION
 HYPOTHESIS-NOT-DIAGNOSIS
-PROBE-MINIMUM
-PREDECLARE-DECISION-RULE
-NO-POSTHOC-RESCUE
+RESPONSE-NOT-EFFECT
+EFFECT-NOT-MECHANISM
+HELPED-BY-NOT-CAUSED-BY-ABSENCE
+COUNTERFACTUAL-REQUIRED
+OUTCOME-FIRST
+MECHANISM-NOT-MANDATORY
+VECTOR-BEFORE-SCALAR
+NO-HIDDEN-WEIGHTS
+AUTHORITY-BEFORE-OPTIMIZATION
+NO-AI-SOVEREIGNTY
+SELECTIVE-LABEL-WATCH
+NO-SELF-VALIDATION
+NO-AUTO-RETRAIN-HIGH-STAKES
 NO-STACK-PREMIUM
 MINIMUM-SUFFICIENT-FIRST
-MARGINAL-COMPONENT-TEST
 REMOVE-NONVALUE
-ANCHOR-NOT-IDOL
-NO-CHAIN-INFERENCE
-NO-OUTCOME-SUBSTITUTION
+COMPLEXITY-MUST-EARN-KEEP
+COMPILE-AWAY-NONVALUE
+MINIMUM-VALID-PATH
 ```
 
 ## Public challenge threads
 
 1. [DISCUSSION](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
 2. [MODEL](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
-3. [EVIDENCE — adversarial passes #1–#4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
-4. [SOLUTION — REAL v0.4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
-5. [PILOT — falsify REAL v0.4](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
-6. [METRICS — reliability, uncertainty, probe effect, adaptive value](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
+3. [EVIDENCE — adversarial Passes #1–#10](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
+4. [SOLUTION — REAL v1.0](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
+5. [PILOT / CONFORMANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
+6. [METRICS](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
 7. [GOVERNANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
 
-## Current falsification frontier
+## Current frontier
 
-**`P := PROBE`** — a useful response to an intervention may not prove the hypothesized mechanism. The next attack asks whether regression to the mean, spontaneous change, placebo/context effects, delayed effects, fidelity failures, and interactions can make REAL update the wrong causal hypothesis.
+Build and execute a machine-readable conformance suite. Same normalized inputs must produce the same valid path; unsupported evidence, causal claims, and authority must remain explicit rather than invented.
 
 ---
 
-**Authorship / provenance:** DOUGLAS W. T., JACKS0N — originating owner; developed through human–AI collaboration using Wa!, RWAL, and REAL.
+**Authorship / provenance:** DOUGLAS W. T., JACKS0N — originating owner; developed through human–AI collaboration using Wa!, RWAL, REAL, and adversarial evidence repair.
