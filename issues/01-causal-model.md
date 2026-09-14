@@ -1,71 +1,76 @@
-# [MODEL] Build and falsify the causal graph
+# [MODEL] Build and falsify the causal / decision graph
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-## Current causal ledger
+## Current ledger
 
 ```text
-C1: institutional/economic rupture → legitimate-role loss
-C2: legitimate-role loss → dignity/agency/belonging loss
-C3: social-bond rupture → alienation/exclusion
-C4: dignity/agency/belonging loss → vulnerability to destructive coping
-C5: alienation/exclusion → vulnerability to exploitative identity/status systems
+C1 institutional/economic rupture → legitimate-role loss
+C2 legitimate-role loss → dignity/agency/belonging loss
+C3 social-bond rupture → alienation/exclusion
+C4 dignity/agency/belonging loss → vulnerability to destructive coping
+C5 alienation/exclusion → vulnerability to exploitative identity/status systems
 
-C6(original): practical enablement + durable social connection → agency/stability↑
-  = BROKEN / OVERBROAD
-C6a: minimum effective domain-specific enablement → target-domain outcome↑
-  = SUPPORTED
-C6b: add RECONNECT to effective ENABLE → incremental durable benefit
-  = MIXED / CONTEXT-DEPENDENT
-C6c: targeted relational component when interpersonal deficit is active bottleneck
-  → selected persistence/QoL/vocational benefit
-  = SELECTIVELY SUPPORTED
-C6d: more integrated components → broader cross-domain gains
-  = NOT SUPPORTED GENERALLY
-C6e: peer/social support add-on → housing increment beyond effective housing support
-  = NOT SUPPORTED GENERALLY
+C6(original) E+R→agency/stability = BROKEN / OVERBROAD
+C6a minimum domain-specific enablement→target outcome = SUPPORTED
+C6b add R to effective E→incremental durable benefit = MIXED / CONTEXT-DEPENDENT
+C6c targeted relational add-on for active interpersonal deficit = SELECTIVELY SUPPORTED
+C6d more components→broader gains = NOT SUPPORTED GENERALLY
+C6e peer/social add-on→extra housing stability = NOT SUPPORTED GENERALLY
 
-C7(original): durable local institutions → persistence of gains↑
-  = BROKEN / OVERCLAIMED
-C7a: capable institutional continuity → implementation continuity/quality↑
-  = SUPPORTED
-C7b: local embeddedness itself → added outcome benefit
-  = UNKNOWN
-C7c: institutional durability itself → persistence after active intervention
-  = PLAUSIBLE/MIXED
-C7d: generic durable local institution → improved cohesion/outcomes
-  = NOT SUPPORTED
+C7(original) durable local institution→persistent gains = BROKEN / OVERCLAIMED
+C7a continuity→implementation quality = SUPPORTED
+C7b locality→added benefit = UNKNOWN
+C7c durability→persistence = PLAUSIBLE/MIXED
+C7d generic durable institution→good outcome = NOT SUPPORTED
+
+D0(original) intake assessment→active causal bottleneck = BROKEN / OVERCLAIMED
+D1 structured assessment→observable/reported needs = FEASIBLE / TOOL-DEPENDENT
+D2 intake assessment→causally dominant need = NOT ESTABLISHED
+D3 inferential formulation agreement = VARIABLE
+D4 structured rules→improved consistency = CONTEXT-DEPENDENT
+D5 response-based sequential testing→adaptive decision-rule evidence = SUPPORTED METHODOLOGY
 ```
 
 ## Current architecture
 
 ```text
-REAL.v0.3 := D → M{R?,E?,R+E?,A?} → L
-D := DIAGNOSE active causal bottleneck(s)
-M := select MINIMUM-SUFFICIENT module set
+REAL.v0.4 := O → H? → P → Δ → M → L
+
+O := OBSERVE
+H? := HYPOTHESIZE + alternatives + confidence + UNKNOWN
+P := minimal safe/reversible mechanism-matched PROBE
+Δ := preregistered MEASURE
+M := KEEP | STOP | SWITCH | AUGMENT | DE-ESCALATE
+L := LEARN/update
 ```
 
-## Required treatment for every arrow/module
+## Required treatment for every claim
 
-- population and context;
-- mechanism;
-- confounders;
-- evidence and counterevidence;
-- boundary conditions;
+- observations separated from inference;
+- candidate mechanism + alternatives;
+- explicit UNKNOWN state;
+- evidence + counterevidence;
 - measurable target;
-- marginal/additive-value test for combinations;
-- falsification condition.
+- preregistered probe and decision threshold;
+- marginal/additive-value test;
+- falsification/revision rule;
+- fairness/burden/harm analysis.
 
-## RWAL invariants
+## Invariants
 
 ```text
-CONTRADICTION>0 → EXPOSE, DO-NOT-HIDE.
-MODEL-OVERFLOW → SPLIT-BRANCHES, DO-NOT-TRUNCATE.
-NO-CHAIN-INFERENCE: Evidence(A→B) & Evidence(B→C) ≠ Proof(A→C).
-NO-STACK-PREMIUM: More components receive no presumption of superiority.
-MINIMUM-SUFFICIENT-FIRST: Use the smallest intervention that clears the active bottleneck.
-REMOVE-NONVALUE: If X adds no durable net benefit, delete X from that context.
-ANCHOR-NOT-IDOL: Institution-survival ≠ participant-success.
+OBSERVE-BEFORE-INFER
+UNKNOWN-IS-VALID
+NO-SCORE-TO-CAUSALITY
+NO-SCORE-TO-ALLOCATION
+HYPOTHESIS-NOT-DIAGNOSIS
+NO-POSTHOC-RESCUE
+NO-CHAIN-INFERENCE
+NO-STACK-PREMIUM
+MINIMUM-SUFFICIENT-FIRST
+REMOVE-NONVALUE
+ANCHOR-NOT-IDOL
 ```
 
-Evidence trail: Issue #3, Independent Evidence Passes #1–#3.
+Evidence trail: Issue #3, Independent Evidence Passes #1–#4.
