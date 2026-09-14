@@ -2,62 +2,46 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-## Question
-
-Can a meaningful share of destructive social outcomes be reduced by treating belonging, dignity, agency, effective support, and evidence-tested continuity as infrastructure—and what evidence would prove that hypothesis wrong?
-
-## Core model — `REAL.v0.2`
+## Core model — `REAL.v0.3`
 
 ```text
-SOURCE
-→ institutional/economic rupture
-→ social-bond + role + dignity + agency loss
-→ alienation / exclusion
-→ vulnerability↑ to destructive coping / exploitative identity systems
-→ downstream human harm
+REAL.v0.3 := D → M{R?,E?,R+E?,A?} → L
 
-NARRATIVE ≠ CAUSATION
-HYPOTHESIS ≠ PROOF
-
-REAL.v0.2 :=
-R{RECONNECT durable human bonds}
-→ E{ENABLE practical agency}
-→ A?{ANCHOR only when persistence value is demonstrated/plausible}
-→ L{LEARN through measurement→audit→repair→replication}
-
-RWAL::REAL::SOLUTION :=
-MAX{DIGNITY,AGENCY,CONNECTION,STABILITY}
-& MIN{COERCION,HARM,FRICTION,PRIVACY-LOSS}
-& EVIDENCE-GATED
-& CONTEXT-SPECIFIC
-& MEASURABLE
-& FALSIFIABLE
-& REVERSIBLE
-& ITERATIVE.
+D := DIAGNOSE active causal bottleneck(s)
+M := MINIMUM-SUFFICIENT module selection
+R? := RECONNECT iff relational deficit is causally relevant/testable
+E? := ENABLE iff practical barrier is causally relevant/testable
+R+E? := combine iff incremental additive value is predicted + measured
+A? := persistence substrate iff marginal persistence value exists
+L := LEARN{measure→compare→remove-nonvalue→repair→replicate}
 ```
 
-## C7 / ANCHOR evidence repair
+## `DEF:INCREMENTAL-ADDITIVE-VALUE`
 
 ```text
-C7(original): durable local institutions → persistence of gains↑   // BROKEN/OVERCLAIMED
-C7a: capable institutional continuity → implementation continuity/quality↑   // SUPPORTED
-C7b: local embeddedness itself → added outcome benefit   // UNKNOWN
-C7c: institutional durability itself → persistence after active intervention   // PLAUSIBLE/MIXED
-C7d: generic durable local institution → improved cohesion/outcomes   // NOT SUPPORTED
+ΔADD := Outcome(E+R) − max{Outcome(E), Outcome(R)}
+        − ComplexityCost − ParticipantBurden − HarmRisk
 ```
 
-`A?{ANCHOR}` is a conditional persistence substrate, not a presumed universal causal stage.
+## C6 evidence repair
 
 ```text
-ENABLE A IFF:
-  persistence-dependency is plausible/demonstrated
-  & effective function is specified
-  & continuity adds value beyond service alone
-  & governance/capture risk <= threshold
-  & cost <= viable alternative
-  & exit/portability preserved
+C6(original) = BROKEN / OVERBROAD
+C6a minimum domain-specific enablement→target outcome = SUPPORTED
+C6b R added to effective E→incremental durable benefit = MIXED / CONTEXT-DEPENDENT
+C6c targeted relational add-on when interpersonal deficit is active = SELECTIVELY SUPPORTED
+C6d more components→broader cross-domain gains = NOT SUPPORTED GENERALLY
+C6e peer/social add-on→extra housing stability = NOT SUPPORTED GENERALLY
+```
 
-ELSE: SKIP A OR use a portable/nonlocal/temporary substrate.
+## C7 evidence repair
+
+```text
+C7(original) durable local institutions→persistent gains = BROKEN / OVERCLAIMED
+C7a continuity→implementation quality = SUPPORTED
+C7b locality→added benefit = UNKNOWN
+C7c durability→persistence = PLAUSIBLE/MIXED
+C7d generic durable institution→good outcome = NOT SUPPORTED
 ```
 
 ## Invariants
@@ -67,10 +51,16 @@ CONTRADICTION>0 → EXPOSE, DO-NOT-HIDE.
 MODEL-OVERFLOW → SPLIT-BRANCHES, DO-NOT-TRUNCATE.
 NO-CHAIN-INFERENCE: Evidence(A→B) & Evidence(B→C) ≠ Proof(A→C).
 NO-OUTCOME-SUBSTITUTION: Housing↑ ≠ MentalHealth↑ ≠ Sobriety↑ ≠ Employment↑ ≠ Violence↓.
+NO-STACK-PREMIUM: More components receive no presumption of superiority.
+MINIMUM-SUFFICIENT-FIRST: Use the smallest intervention that clears the active bottleneck.
+MARGINAL-COMPONENT-TEST: keep X only when its durable net ΔX exceeds threshold.
+REMOVE-NONVALUE: If X adds no durable net benefit, delete X from that context.
 ANCHOR-NOT-IDOL: Institution-survival ≠ participant-success.
 REAL fails IFF institutional-control↑ faster than participant-agency↑.
 ```
 
-The issue set is the executable research surface: Discussion → Model → Evidence → Solution → Pilot → Metrics → Governance.
+## Current falsification frontier
 
-Current next falsification target after ANCHOR: **C6 / ENABLEMENT** — test integrated practical enablement + social connection against the strongest minimum single-domain intervention.
+`DIAGNOSE`: determine whether active causal bottlenecks can be identified reproducibly, prospectively, and with low enough burden to justify adaptive module selection.
+
+The issue set remains the executable research surface: Discussion → Model → Evidence → Solution → Pilot → Metrics → Governance.
