@@ -1,14 +1,37 @@
-# REAL / RWAL — Public Discussion Starter
+# REAL / RWAL — Historical Starting Formulation
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-This repository opens a falsifiable public discussion distilled from the supplied source archive.
+This file preserves the **starting hypothesis** that launched the public falsification process. It is not the current canonical architecture.
+
+## Historical v0 starting point
 
 ```text
 REAL := RECONNECT → ENABLE → ANCHOR → LEARN
-RWAL::REAL::SOLUTION := MAX{DIGNITY,AGENCY,CONNECTION,STABILITY}
-& MIN{COERCION,HARM,FRICTION,PRIVACY-LOSS}
-& EVIDENCE-GATED & LOCAL-FIRST & MEASURABLE & FALSIFIABLE & REVERSIBLE & ITERATIVE.
 ```
 
-Hypothesis is not proof. Every causal arrow is open to challenge, evidence, counterevidence, falsification, and repair.
+That fixed pipeline was subsequently attacked and materially revised:
+
+```text
+universal E+R additivity = BROKEN
+mandatory ANCHOR = BROKEN
+one-shot causal DIAGNOSE = BROKEN
+probe response→mechanism proof = BROKEN
+mandatory mechanism certainty = BROKEN
+universal scalar utility = BROKEN
+technical model as legitimate chooser = BROKEN
+naive self-learning = BROKEN
+mandatory maximal pipeline = OVER-SPECIFIED
+```
+
+## Current canonical architecture
+
+```text
+REAL.v1.0 := COMPILE(Context)
+             → MIN-VALID-PATH
+             → ACT | OFFER | DEFER | NO-ACTION
+             → MEASURE
+             → TRACE/AUDIT
+```
+
+See the repository root README, Issue #3 evidence passes, and Issue #4 current solution for the live specification.
