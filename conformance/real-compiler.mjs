@@ -1,4 +1,4 @@
-export const VERSION = 'REAL.v1.0-ref.1';
+export const VERSION = 'REAL.v1.0-ref.2';
 
 const CORE = ['O','B','C','T'];
 const AUTH = new Set(['SELF','SHARED','PUBLIC_ALLOCATION','SAFETY_LEGAL','UNKNOWN_AUTHORITY']);
@@ -14,18 +14,31 @@ export function normalize(input) {
   assert(AUTH.has(input.authority), `invalid authority: ${input.authority}`);
   assert(input.evidence && EVIDENCE.has(input.evidence.status), 'valid evidence.status required');
   const options = [...(input.options || [])].map(o => ({
-    acceptable: true, supported: false, reversible: true,
-    prohibited: false, participant_rank: null, ...o
+    acceptable: true,
+    supported: false,
+    reversible: true,
+    prohibited: false,
+    participant_rank: null,
+    ...o
   })).sort(byId);
   assert(options.every(o => o.id), 'every option requires id');
   return {
-    irreversible: false, high_stakes: false,
+    irreversible: false,
+    high_stakes: false,
     authority_confirmed: input.authority !== 'UNKNOWN_AUTHORITY',
-    tradeoff_material: false, ranking_sensitive: false,
-    hypothesis_may_change_action: false, probe_feasible: false,
-    mechanism_value_expected: false, persistence_value_expected: false,
-    sequential_decision: false, selective_labels: false,
-    policy_rule_present: false, subgroup_harm_material: false,
+    tradeoff_material: false,
+    ranking_sensitive: false,
+    hypothesis_may_change_action: false,
+    probe_feasible: false,
+    mechanism_value_expected: false,
+    persistence_value_expected: false,
+    sequential_decision: false,
+    selective_labels: false,
+    policy_rule_present: false,
+    policy_selection: null,
+    safety_legal_review_passed: false,
+    authorized_selection: null,
+    subgroup_harm_material: false,
     ...input,
     options,
     evidence: {...input.evidence, supported_options: uniqSorted(input.evidence.supported_options || [])}
@@ -36,7 +49,10 @@ function trace(rule, detail){ return {rule, detail}; }
 
 export function compile(rawInput) {
   const x = normalize(rawInput);
-  const modules = [...CORE], traces = [], flags = [], unknown = [];
+  const modules = [...CORE];
+  const traces = [];
+  const flags = [];
+  const unknown = [];
 
   if (x.authority !== 'SELF' && x.authority !== 'SHARED') modules.push('G+');
   if (x.authority === 'UNKNOWN_AUTHORITY') {
@@ -49,13 +65,25 @@ export function compile(rawInput) {
     }
   }
   if ((x.authority === 'PUBLIC_ALLOCATION' || x.authority === 'SAFETY_LEGAL') && !x.authority_confirmed) {
-    flags.push('SAFE_BLOCK'); unknown.push('authority_confirmation');
-    return finalize(x, modules, 'DEFER', null, traces, flags, unknown, 'Required authority is not confirmed.');
+    flags.push('SAFE_BLOCK');
+    unknown.push('authority_confirmation');
+    return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+      'Required authority is not confirmed.');
   }
   if (x.authority === 'PUBLIC_ALLOCATION' && !x.policy_rule_present) {
     flags.push('GOVERNANCE_REQUIRED');
     return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
       'Public allocation requires a legitimate predeclared rule and appeal/revision process.');
+  }
+  if (x.authority === 'PUBLIC_ALLOCATION' && !x.policy_selection) {
+    flags.push('POLICY_SELECTION_REQUIRED');
+    return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+      'Public allocation rule exists but no explicit policy-selected option was supplied.');
+  }
+  if (x.authority === 'SAFETY_LEGAL' && (!x.safety_legal_review_passed || !x.authorized_selection)) {
+    flags.push('SAFETY_LEGAL_REVIEW_REQUIRED');
+    return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+      'Safety/legal action requires documented review and explicit authorized selection.');
   }
 
   const acceptable = x.options.filter(o => o.acceptable && !o.prohibited);
@@ -90,6 +118,12 @@ export function compile(rawInput) {
     }
   }
 
+  if (x.authority === 'UNKNOWN_AUTHORITY') {
+    flags.push('AUTHORITY_UNRESOLVED');
+    return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+      'Unresolved authority permits no substantive ACT selection; only an explicitly valid probe may precede resolution.');
+  }
+
   if (x.mechanism_value_expected) modules.push('K?');
   if (x.persistence_value_expected) modules.push('A?');
   if (x.sequential_decision) modules.push('ADAPT?');
@@ -113,6 +147,28 @@ export function compile(rawInput) {
   }
   if (!candidates.length) candidates = acceptable;
 
+  if (x.authority === 'PUBLIC_ALLOCATION') {
+    const selected = candidates.find(o => o.id === x.policy_selection);
+    if (!selected) {
+      flags.push('POLICY_SELECTION_UNSUPPORTED');
+      return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+        'Policy-selected option is not among acceptable evidence-supported candidates.');
+    }
+    return finalize(x, modules, 'ACT', selected.id, traces, flags, unknown,
+      'Execute explicit policy-selected option under confirmed public-allocation authority.');
+  }
+
+  if (x.authority === 'SAFETY_LEGAL') {
+    const selected = candidates.find(o => o.id === x.authorized_selection);
+    if (!selected) {
+      flags.push('AUTHORIZED_SELECTION_UNSUPPORTED');
+      return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+        'Authorized safety/legal selection is not among acceptable evidence-supported candidates.');
+    }
+    return finalize(x, modules, 'ACT', selected.id, traces, flags, unknown,
+      'Execute explicitly authorized selection after safety/legal review.');
+  }
+
   if (x.subgroup_harm_material) {
     return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
       'Material subgroup harm requires explicit review/repair before selection.');
@@ -121,31 +177,36 @@ export function compile(rawInput) {
   if (x.ranking_sensitive) {
     const ids = candidates.map(o => o.id).sort();
     return finalize(x, modules, x.authority === 'SELF' || x.authority === 'SHARED' ? 'OFFER' : 'DEFER', ids,
-      traces, flags, unknown, 'No objective scalar ranking exists under defensible value variation.');
+      traces, flags, unknown,
+      'No objective scalar ranking exists under defensible value variation.');
   }
 
   if (x.authority === 'SELF' || x.authority === 'SHARED') {
-    const ranked = candidates.filter(o => Number.isFinite(o.participant_rank))
-      .sort((a,b) => a.participant_rank-b.participant_rank || byId(a,b));
-    if (ranked.length) {
-      return finalize(x, modules, candidates.length > 1 ? 'OFFER' : 'ACT',
-        candidates.length > 1 ? candidates.map(o=>o.id).sort() : ranked[0].id,
-        traces, flags, unknown,
-        candidates.length > 1 ? 'Offer acceptable evidence-supported options; participant preference governs selection.' : 'Single acceptable evidence-supported option.');
+    if (candidates.length > 1) {
+      return finalize(x, modules, 'OFFER', candidates.map(o=>o.id).sort(), traces, flags, unknown,
+        'Offer all acceptable evidence-supported options; do not invent a participant preference.');
     }
+    return finalize(x, modules, 'ACT', candidates[0].id, traces, flags, unknown,
+      'Single acceptable evidence-supported option.');
   }
 
-  const selected = candidates[0];
-  return finalize(x, modules, 'ACT', selected.id, traces, flags, unknown,
-    'Select deterministic first supported acceptable option after all declared boundaries.');
+  return finalize(x, modules, 'DEFER', null, traces, flags, unknown,
+    'No explicit authority-valid selection rule resolved the remaining options.');
 }
 
 function finalize(x, modules, disposition, selection, traces, flags, unknown, reason) {
   const path = uniqSorted(modules);
   const ordered = [...CORE, ...path.filter(m => !CORE.includes(m)).sort()];
   return {
-    compiler_version: VERSION, input_id: x.id, disposition, selection,
-    modules: ordered, unknown: uniqSorted(unknown), flags: uniqSorted(flags), reason, trace: traces,
+    compiler_version: VERSION,
+    input_id: x.id,
+    disposition,
+    selection,
+    modules: ordered,
+    unknown: uniqSorted(unknown),
+    flags: uniqSorted(flags),
+    reason,
+    trace: traces,
     invariants: {
       unknown_preserved: true,
       authority_not_invented: true,
