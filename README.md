@@ -2,11 +2,11 @@
 
 **Owner / originating author:** DOUGLAS W. T., JACKS0N
 
-> Can a meaningful share of destructive social outcomes be reduced by treating **belonging, dignity, agency, and durable local institutions as infrastructure**—and what evidence would prove that hypothesis wrong?
+> Can a meaningful share of destructive social outcomes be reduced by treating **belonging, dignity, agency, effective support, and evidence-tested continuity as infrastructure**—and what evidence would prove that hypothesis wrong?
 
 This repository converts the supplied 52-frame source narrative into a **public, falsifiable challenge**. The source is treated as hypothesis-generating material, **not proof**.
 
-## `DEF:REAL:RWAL::SOLUTION`
+## `DEF:REAL:RWAL::SOLUTION` — evidence-repaired v0.2
 
 ```text
 SOURCE
@@ -19,21 +19,54 @@ SOURCE
 NARRATIVE ≠ CAUSATION
 HYPOTHESIS ≠ PROOF
 
-REAL :=
+REAL.v0.2 :=
 R{RECONNECT durable human bonds}
 → E{ENABLE practical agency}
-→ A{ANCHOR progress in durable local institutions}
+→ A?{ANCHOR only when a persistence substrate adds demonstrated value}
 → L{LEARN through measurement→audit→repair→replication}
 
 RWAL::REAL::SOLUTION :=
 MAX{DIGNITY,AGENCY,CONNECTION,STABILITY}
 & MIN{COERCION,HARM,FRICTION,PRIVACY-LOSS}
 & EVIDENCE-GATED
-& LOCAL-FIRST
+& CONTEXT-SPECIFIC
 & MEASURABLE
 & FALSIFIABLE
 & REVERSIBLE
 & ITERATIVE.
+```
+
+## Evidence repair: C7 / ANCHOR
+
+Independent Evidence Pass #2 broke the original universal proposition:
+
+```text
+C7(original): durable local institutions → persistence of gains↑
+```
+
+It is now decomposed as:
+
+```text
+C7a continuity→implementation quality = SUPPORTED
+C7b locality→added benefit = UNKNOWN
+C7c durability→persistence = PLAUSIBLE/MIXED
+C7d generic durable institution→good outcome = NOT SUPPORTED
+```
+
+Therefore:
+
+```text
+A?{ANCHOR} = CONDITIONAL-PERSISTENCE-SUBSTRATE
+
+ENABLE A IFF:
+  persistence-dependency is plausible/demonstrated
+  & effective function is specified
+  & continuity adds value beyond service alone
+  & governance/capture risk <= threshold
+  & cost <= viable alternative
+  & exit/portability preserved
+
+ELSE: SKIP A.
 ```
 
 ## RWAL invariants
@@ -41,6 +74,9 @@ MAX{DIGNITY,AGENCY,CONNECTION,STABILITY}
 ```text
 CONTRADICTION>0 → EXPOSE, DO-NOT-HIDE.
 MODEL-OVERFLOW → SPLIT-BRANCHES, DO-NOT-TRUNCATE.
+NO-CHAIN-INFERENCE: Evidence(A→B) & Evidence(B→C) ≠ Proof(A→C).
+NO-OUTCOME-SUBSTITUTION: Housing↑ ≠ MentalHealth↑ ≠ Sobriety↑ ≠ Employment↑ ≠ Violence↓.
+ANCHOR-NOT-IDOL: Institution-survival ≠ participant-success.
 REAL fails IFF institutional-control↑ faster than participant-agency↑.
 ```
 
@@ -48,8 +84,8 @@ REAL fails IFF institutional-control↑ faster than participant-agency↑.
 
 1. [DISCUSSION — dispute the problem model](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
 2. [MODEL — build and falsify the causal graph](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
-3. [EVIDENCE — create the evidence/counterevidence ledger](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
-4. [SOLUTION — challenge REAL: Reconnect → Enable → Anchor → Learn](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
+3. [EVIDENCE — evidence/counterevidence ledger + independent passes](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
+4. [SOLUTION — REAL v0.2: Reconnect → Enable → [Anchor?] → Learn](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
 5. [PILOT — design a 90-day REAL neighborhood cell](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
 6. [METRICS — measure outcomes without gaming them](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
 7. [GOVERNANCE — prevent the solution from becoming another control system](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
