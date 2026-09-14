@@ -4,7 +4,7 @@
 
 > Build the shortest evidence-, rights-, authority-, and uncertainty-valid path to a human decision—then expose enough trace to falsify it.
 
-This repository converts the initiating narrative into a **public adversarial research challenge**. The model has been repeatedly attacked, broken, repaired, simplified, fuzzed, mutation-tested, and cross-implemented rather than defended unchanged.
+This repository converts the initiating narrative into a **public adversarial research challenge**. The model has been repeatedly attacked, broken, repaired, simplified, fuzzed, mutation-tested, cross-implemented, and specification-repaired rather than defended unchanged.
 
 ## `DEF:REAL.v1.0` — Minimum-Valid Decision Compiler
 
@@ -64,20 +64,7 @@ one universal objective utility scalar           = BROKEN
 model/top score→legitimate authority              = BROKEN
 naive deploy→observe→retrain                      = BROKEN
 mandatory maximal REAL pipeline                  = OVER-SPECIFIED
-```
-
-## What survives
-
-```text
-OBSERVE enough to decide
-RESPECT rights/safety/authority boundaries
-USE best applicable comparative evidence
-EXPOSE uncertainty / preserve UNKNOWN
-CHOOSE/OFFER/DEFER transparently
-MEASURE outcomes when material
-TRACE provenance + version
-AUDIT policy-level learning for selection/fairness/drift
-ADD complexity only when it changes decision quality/safety/auditability
+underspecified authority/gate precedence          = BROKEN + REPAIRED
 ```
 
 ## Mandatory laws
@@ -107,11 +94,30 @@ REMOVE-NONVALUE
 COMPLEXITY-MUST-EARN-KEEP
 COMPILE-AWAY-NONVALUE
 MINIMUM-VALID-PATH
+TERMINAL-GATE-SHORT-CIRCUIT
+DOWNSTREAM-OMISSION≠RESOLUTION
 ```
 
-## Executable conformance harness
+## Normative specification
 
-The [`conformance/`](conformance/) directory now contains two separately implemented references plus regression, property, mutation, and semantic cross-language tests.
+Implementation-neutral semantics are now explicit in [`conformance/SPECIFICATION.md`](conformance/SPECIFICATION.md) and Issue #9.
+
+```text
+P0 INPUT-VALIDITY
+P1 OBSERVE / CONTEXT
+P2 HARD-AUTHORITY-GATES
+P3 OPTION-BOUNDARIES / EVIDENCE-SUPPORT
+P4 MATERIAL-VALUE/HARM ANALYSIS
+P5 UNCERTAINTY / HYPOTHESIS / PROBE
+P6 AUTHORITY-VALID SELECTION
+P7 TRACE / MEASURE / SYSTEM-AUDIT
+```
+
+`trace.rule` identifiers are normative semantic output. Human-readable `trace.detail` prose is non-normative unless explicitly canonicalized.
+
+## Reference conformance harness
+
+The [`conformance/`](conformance/) directory contains JavaScript and Python references plus regression, property, mutation, and cross-language semantic tests.
 
 ```bash
 node conformance/test.mjs
@@ -121,7 +127,7 @@ python3 conformance/crosscheck.py
 python3 conformance/crosscheck_fuzz.py
 ```
 
-Current status:
+Current reference status:
 
 ```text
 JavaScript: REAL.v1.0-ref.2
@@ -130,38 +136,77 @@ Python:     REAL.v1.0-py-ref.1
 19/19 regression fixtures PASS
 640/640 combinatorial property cases PASS
 9/9 intentionally dangerous mutants KILLED
-0 current invariant violations
 0 mutation survivors
 
-JS ↔ Python regression comparison:
-19/19 cases, 0 semantic mismatches
-
-JS ↔ Python combinatorial comparison:
-640/640 states, 0 semantic mismatches
+JS ↔ Python:
+19/19 regression cases agree
+640/640 combinatorial states agree
+0 semantic mismatches
 ```
 
-The initial executable version remains preserved in the public evidence trail: `ref.1` passed 10 hand-authored fixtures but failed 51 combinatorial invariant checks. Those failures were repaired and converted into regression tests. Mutation testing then exposed additional test-suite gaps before reaching 9/9 killed mutants.
+## Specification-only Go implementation attack — Pass #14
 
-The Python reference was implemented separately from the JavaScript runtime and agrees on the defined semantic outputs across the current regression and 640-state combinatorial corpus. This is **cross-language replication within the same project**, not independent external validation.
+A Go implementation was written/frozen from Issue #4 before loading the shared corpus and without re-inspecting/copying the reference compiler during that phase. Because the same project/agent had prior reference exposure, this is **clean-room-style specification replication, not independent external validation**.
 
-Passing these suites establishes **internal/reference conformance only**—not clinical/legal validity, real-world effectiveness, fairness across actual populations, external validity, or production security.
+Published under [`independent/`](independent/).
+
+Initial comparison:
+
+```text
+19 regression cases:
+18 exact semantic matches
+1 trace-detail wording difference
+
+640 combinatorial states:
+528 exact matches
+112 disagreements
+```
+
+All 112 full-space disagreements occurred only in `PUBLIC_ALLOCATION` or `SAFETY_LEGAL` branches. They exposed a missing normative rule: hard-governance gate precedence.
+
+The specification was repaired first with explicit P0→P7 precedence and `TERMINAL-GATE-SHORT-CIRCUIT`; the Go implementation was then aligned to that repaired specification.
+
+Post-repair canonical semantic comparison:
+
+```text
+19/19 regression cases → 0 mismatches
+640/640 combinatorial states → 0 mismatches
+```
+
+This is the intended behavior:
+
+```text
+IMPLEMENTATION-DISAGREEMENT
+→ SPEC-TEST
+→ repair SPEC first when ambiguity is real
+→ re-run implementations
+```
+
+Run:
+
+```bash
+python3 independent/compare.py
+```
 
 ## Public challenge threads
 
 1. [DISCUSSION](https://github.com/wabanglang/Wa-cha-challenge-1/issues/1)
 2. [MODEL](https://github.com/wabanglang/Wa-cha-challenge-1/issues/2)
-3. [EVIDENCE — adversarial Passes #1–#13](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
-4. [SOLUTION — REAL v1.0](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
+3. [EVIDENCE — adversarial Passes #1–#14](https://github.com/wabanglang/Wa-cha-challenge-1/issues/3)
+4. [SOLUTION — REAL v1.0 + normative precedence](https://github.com/wabanglang/Wa-cha-challenge-1/issues/4)
 5. [PILOT / CONFORMANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/5)
 6. [METRICS](https://github.com/wabanglang/Wa-cha-challenge-1/issues/6)
 7. [GOVERNANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/7)
+8. [INDEPENDENT IMPLEMENTATION CHALLENGE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/8)
+9. [NORMATIVE SPEC / SEMANTIC CONFORMANCE](https://github.com/wabanglang/Wa-cha-challenge-1/issues/9)
+10. [SPEC-ONLY GO RESULT](https://github.com/wabanglang/Wa-cha-challenge-1/issues/10)
 
 ## Current frontier
 
-**Independent implementation from specification only.** A separate author/team should implement REAL.v1.0 without inspecting either reference compiler, run the shared semantic corpus, and treat disagreements as specification ambiguity or missing invariants—not merely implementation bugs.
+A **genuinely independent author/team** with no prior exposure to either reference implementation should implement from Issues #4/#9 or `conformance/SPECIFICATION.md` only, then run the shared semantic corpus. Any disagreement should again be treated first as possible specification ambiguity.
 
-After that, the frontier becomes external validity: whether real decision contexts can be represented without losing critical information or imposing unacceptable data/assessment burden.
+After independent replication, the frontier becomes external validity: whether real decision contexts can be represented without losing material information, creating unacceptable burden, or systematically distorting choices.
 
 ---
 
-**Authorship / provenance:** DOUGLAS W. T., JACKS0N — originating owner; developed through human–AI collaboration using Wa!, RWAL, REAL, adversarial evidence repair, executable conformance, fuzzing, mutation testing, and cross-language replication.
+**Authorship / provenance:** DOUGLAS W. T., JACKS0N — originating owner; developed through human–AI collaboration using Wa!, RWAL, REAL, adversarial evidence repair, executable conformance, fuzzing, mutation testing, cross-language replication, and specification-only implementation attacks.
